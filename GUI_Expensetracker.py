@@ -61,7 +61,6 @@ def show_summary():
         messagebox.showinfo("Summary", "No expenses yet!")
         return
     
-    # Display pie chart
     categories = list(totals.keys())
     amounts = list(totals.values())
     plt.figure(figsize=(6,6))
@@ -94,4 +93,5 @@ tk.Button(root, text="View Expenses", command=view_expenses).grid(row=4, column=
 tk.Button(root, text="Summary (Pie Chart)", command=show_summary).grid(row=5, column=0, columnspan=2, pady=10)
 
 root.mainloop()
+
 
