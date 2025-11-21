@@ -6,8 +6,6 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 
 FILE = "expenses.csv"
-
-# Ensure CSV file exists
 try:
     with open(FILE, "x", newline="") as f:
         writer = csv.writer(f)
@@ -15,7 +13,6 @@ try:
 except FileExistsError:
     pass
 
-# --- Functions ---
 def add_expense():
     try:
         amount = float(amount_entry.get())
@@ -72,7 +69,6 @@ def show_summary():
     plt.title("Expenses by Category")
     plt.show()
 
-# --- GUI ---
 root = tk.Tk()
 root.title("Expense Tracker")
 root.geometry("400x300")
@@ -98,3 +94,4 @@ tk.Button(root, text="View Expenses", command=view_expenses).grid(row=4, column=
 tk.Button(root, text="Summary (Pie Chart)", command=show_summary).grid(row=5, column=0, columnspan=2, pady=10)
 
 root.mainloop()
+
